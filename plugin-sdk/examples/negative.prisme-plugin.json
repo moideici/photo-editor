@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "prisme.example.negative",
+  "name": "Négatif — script",
+  "version": "1.0.0",
+  "author": "Prisme",
+  "description": "Inverse les couleurs en conservant l’alpha.",
+  "kind": "rhai",
+  "file": "negative.rhai",
+  "parameters": [],
+  "timeoutMs": 30000
+}

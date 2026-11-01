@@ -1,0 +1,4 @@
+[env]
+LIB_AOM_DECODE_WIDTH_LIMIT = "16384"
+LIB_AOM_DECODE_HEIGHT_LIMIT = "16384"
+CMAKE_TOOLCHAIN_FILE = { value = ".cargo/aom-toolchain.cmake", relative = true }

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "prisme.example.brightness",
+  "name": "Luminosité — script",
+  "version": "1.0.0",
+  "author": "Prisme",
+  "description": "Exemple de paramètre numérique ; conserve l’alpha.",
+  "kind": "rhai",
+  "file": "brightness.rhai",
+  "parameters": [{"key": "amount", "label": "Décalage", "min": -255, "max": 255, "default": 20, "step": 1}],
+  "timeoutMs": 30000
+}

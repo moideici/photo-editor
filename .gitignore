@@ -1,0 +1,16 @@
+node_modules/
+dist/
+src-tauri/target/
+src-tauri/gen/
+work/
+*.log
+**/target/
+.build-plugins/
+tsconfig.tsbuildinfo
+plugin-sdk/native/*.dll
+plugin-sdk/pfl/examples/*.pfl
+*.key
+*.dpapi
+*.p12
+*.pfx
+.env*

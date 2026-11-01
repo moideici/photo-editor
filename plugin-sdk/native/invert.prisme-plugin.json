@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "id": "prisme.example.native-invert",
+  "name": "Négatif C — exemple SDK",
+  "version": "1.0.0",
+  "author": "Prisme",
+  "description": "Exemple natif à compiler avec le SDK ; conserve l’alpha.",
+  "kind": "native",
+  "file": "invert.dll",
+  "parameters": [],
+  "timeoutMs": 30000
+}

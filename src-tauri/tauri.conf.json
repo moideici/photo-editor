@@ -1,0 +1,93 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Prisme",
+  "version": "1.5.0",
+  "identifier": "fr.prisme.editor",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Prisme",
+        "width": 1400,
+        "height": 900,
+        "minWidth": 900,
+        "minHeight": 600,
+        "dragDropEnabled": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self' ipc: http://ipc.localhost; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; font-src 'self' data:"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis",
+      "msi"
+    ],
+    "resources": {
+      "../README.md": "README.md",
+      "../LICENSE": "LICENSE",
+      "../THIRD_PARTY_NOTICES.txt": "THIRD_PARTY_NOTICES.txt",
+      "../8BF.md": "8BF.md",
+      "../PFL.md": "PFL.md",
+      "../PFL_ABI.md": "PFL_ABI.md",
+      "../PFL_CONTROLE_CROISE.md": "PFL_CONTROLE_CROISE.md",
+      "../plugin-sdk": "plugin-sdk"
+    },
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "shortDescription": "Éditeur d'images bitmap et vectoriel",
+    "longDescription": "Prisme : retouche photo, calques, filtres et édition SVG.",
+    "category": "Graphics and Design",
+    "copyright": "MIT",
+    "fileAssociations": [
+      {
+        "ext": [
+          "prisme"
+        ],
+        "name": "Projet Prisme",
+        "description": "Projet Prisme",
+        "role": "Editor"
+      }
+    ],
+    "windows": {
+      "nsis": {
+        "languages": [
+          "French",
+          "English"
+        ],
+        "displayLanguageSelector": false,
+        "installMode": "currentUser"
+      },
+      "wix": {
+        "language": [
+          "fr-FR"
+        ]
+      }
+    },
+    "createUpdaterArtifacts": true
+  },
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDUwQTMxMTk4MDA0MkVBRTEKUldUaDZrSUFtQkdqVUcvN3lndGNlbmhETTRtcWROWWorUkdLdjZ0QnZ3bG9aNTVhY0phMkZ0ZEcK",
+      "windows": {
+        "installMode": "passive"
+      },
+      "endpoints": [
+        "https://github.com/moidefr/photo-editor/releases/latest/download/latest.json"
+      ]
+    }
+  }
+}

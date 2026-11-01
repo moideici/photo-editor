@@ -1,0 +1,58 @@
+[package]
+name = "prisme"
+version = "1.5.0"
+description = "Prisme, éditeur d'images bitmap et vectoriel"
+authors = ["G"]
+license = "MIT"
+edition = "2021"
+
+[lib]
+name = "prisme_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp", "bmp", "gif", "tiff", "ico", "rayon", "avif"] }
+resvg = "0.49"
+ttf-parser = "0.25"
+svgtypes = "0.16"
+rayon = "1.12"
+zip = { version = "9", default-features = false, features = ["deflate"] }
+base64 = "0.23"
+data-url = "0.3.2"
+roxmltree = "0.21.2"
+arboard = "3"
+png = "0.18"
+gif = "0.14"
+avif-decode = { version = "=1.0.2", default-features = false }
+avif-parse = "2.1"
+flate2 = "1"
+svg2pdf = "0.13"
+i_overlay = "9.1"
+libloading = "0.9"
+rhai = { version = "1.23", features = ["no_module"] }
+tempfile = "3"
+eightbf_host = { package = "prisme-eightbf-core", path = "../vendor/eightbf-core" }
+tauri-plugin-updater = "2"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = ["Win32_Foundation", "Win32_Graphics_Gdi", "Win32_UI_WindowsAndMessaging", "Win32_UI_Input_KeyboardAndMouse", "Win32_System_Threading"] }
+windows = { version = "0.61", features = ["Win32_Graphics_Imaging", "Win32_System_Com", "Win32_System_Com_StructuredStorage", "Win32_System_Variant", "Win32_System_Ole", "Win32_Foundation", "Win32_System_Diagnostics_Debug", "Win32_System_JobObjects", "Win32_System_Threading", "Win32_Security"] }
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+codegen-units = 1
+strip = true
+
+[profile.dev.package."*"]
+opt-level = 2
+
+[dev-dependencies]
+minisign-verify = "0.3"

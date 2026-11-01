@@ -1,0 +1,24 @@
+[package]
+name = "prisme-eightbf-core"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.88"
+license = "MIT"
+authors = ["Durable Programming, LLC"]
+repository = "https://github.com/distortionary-labs/8bf-host"
+[lib]
+name = "eightbf_host"
+[features]
+pack4 = []
+[dependencies]
+serde = {version="1",features=["derive"]}
+serde_json = "1"
+thiserror = "2"
+libloading = "0.8"
+base64 = "0.22"
+[target.'cfg(windows)'.dependencies]
+windows-sys = {version="0.59",features=["Wdk_System_Threading","Win32_Foundation","Win32_Graphics_Gdi","Win32_System_Diagnostics_ToolHelp","Win32_System_Memory","Win32_System_Threading","Win32_UI_Controls_Dialogs"]}
+[package.metadata.prisme]
+upstream = "https://github.com/distortionary-labs/8bf-host/tree/2a52154f160bb25c9ab2a77c29c7ddaccf0b8258"
+[dev-dependencies]
+tempfile = "3"
