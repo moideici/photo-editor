@@ -4,7 +4,7 @@ use minisign_verify::{PublicKey,Signature};
 fn official_channel_requires_https_and_the_actual_public_key(){
     let config:serde_json::Value=serde_json::from_str(include_str!("../tauri.conf.json")).unwrap();
     assert_eq!(config["bundle"]["createUpdaterArtifacts"],true);
-    assert_eq!(config["plugins"]["updater"]["endpoints"],serde_json::json!(["https://github.com/moidefr/photo-editor/releases/latest/download/latest.json"]));
+    assert_eq!(config["plugins"]["updater"]["endpoints"],serde_json::json!(["https://github.com/moideici/photo-editor/releases/latest/download/latest.json"]));
     let text=String::from_utf8(STANDARD.decode(config["plugins"]["updater"]["pubkey"].as_str().unwrap()).unwrap()).unwrap();
     PublicKey::decode(&text).unwrap();
 }

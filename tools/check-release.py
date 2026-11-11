@@ -10,7 +10,7 @@ tag=os.environ.get('GITHUB_REF','')
 if tag.startswith('refs/tags/'):
     assert tag=='refs/tags/v'+cargo,'Tag and app version differ'
 updater=config['plugins']['updater']
-assert updater['endpoints']==['https://github.com/moidefr/photo-editor/releases/latest/download/latest.json']
+assert updater['endpoints']==['https://github.com/moideici/photo-editor/releases/latest/download/latest.json']
 assert updater['pubkey'] and config['bundle']['createUpdaterArtifacts'] is True
 assert not updater.get('dangerousInsecureTransportProtocol')
 for source in config['bundle']['resources']:

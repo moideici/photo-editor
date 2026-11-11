@@ -86,7 +86,7 @@
         "installMode": "passive"
       },
       "endpoints": [
-        "https://github.com/moidefr/photo-editor/releases/latest/download/latest.json"
+        "https://github.com/moideici/photo-editor/releases/latest/download/latest.json"
       ]
     }
   }
