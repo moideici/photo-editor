@@ -136,7 +136,7 @@ Perl (celui de Git for Windows est détecté) et WebView2. CMake et Perl servent
 compiler le décodeur AV1 ; ils ne sont pas nécessaires à l’application distribuée.
 
 ```powershell
-cd C:\Users\G\Dev\reverse\prisme
+cd %USERPROFILE%\Dev\reverse\prisme
 npm install
 npm run tauri dev
 ```
